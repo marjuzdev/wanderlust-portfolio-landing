@@ -1,0 +1,40 @@
+{
+  "name": "photographer.name",
+  "tagline": "photographer.tagline",
+  "bio": "photographer.bio",
+  "biography": {
+    "philosophy": "photographer.biography.philosophy",
+    "background": "photographer.biography.background",
+    "experience": "photographer.biography.experience",
+    "currentFocus": "photographer.biography.currentFocus"
+  },
+  "portraitImage": {
+    "src": "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=1000&q=80",
+    "alt": "Explorer in the Mountains"
+  },
+  "clients": [
+    {
+      "category": "photographer.clients.travel_partners",
+      "clients": [
+        "National Geographic",
+        "Lonely Planet",
+        "Airbnb Adventures"
+      ]
+    },
+    {
+      "category": "photographer.clients.publications",
+      "clients": [
+        "Condé Nast Traveler",
+        "Travel + Leisure"
+      ]
+    }
+  ],
+  "contact": {
+    "email": "hola@wanderlustchronicles.co",
+    "phone": "+57 300 123 4567"
+  },
+  "socials": {
+    "instagram": "https://instagram.com/wanderlust_chronicles",
+    "twitter": "https://twitter.com/wanderlust_chronicles"
+  }
+}

@@ -1,0 +1,73 @@
+{
+    "navigation": {
+        "home": "Home",
+        "collection": "Collection",
+        "information": "Information",
+        "all_photos": "All Photos",
+        "about": "About"
+    },
+    "home": {
+        "featured_destination": "Featured Destination",
+        "explore_destination": "Explore Destination",
+        "curated_selection": "Curated Selection",
+        "discover_world": "Discover \nThe World",
+        "full_collection": "Full Collection",
+        "preparing": "Preparing the next adventure..."
+    },
+    "destination": {
+        "destination_label": "Destination",
+        "history": "History",
+        "why_visit": "Why Visit"
+    },
+    "gallery": {
+        "archive": "Archive",
+        "world_gallery": "World Gallery",
+        "all_destinations": "All Destinations"
+    },
+    "footer": {
+        "rights_reserved": "All Rights Reserved.",
+        "created_by": "Created by",
+        "philosophy": "Philosophy"
+    },
+    "photographer": {
+        "name": "Wanderlust Chronicles",
+        "tagline": "Discovering the Soul of the World",
+        "bio": "A visual journey that began in the vibrant landscapes of Colombia and expanded to the world. We capture the essence of inspiring destinations, connecting cultures through the lens.",
+        "biography": {
+            "philosophy": "Travel is not just about seeing new places, but about feeling them. We believe in immersive exploration that goes beyond the guidebooks to find the beating heart of every culture.",
+            "background": "What started in 2018 as a project to document Colombia's biodiversity and traditions has transformed into a global platform for visual storytelling.",
+            "experience": "From the Amazon to the Alps, our team has traveled to over 50 countries, always carrying the passion for discovering authentic stories and connecting with local communities.",
+            "currentFocus": "Currently expanding our horizons to Asia and the Nordic countries, without forgetting our roots and commitment to untold stories."
+        },
+        "clients": {
+            "travel_partners": "Travel Partners",
+            "publications": "Publications"
+        },
+        "contact": {
+            "direct_channel": "Direct Channel",
+            "available_message": "Focused on documenting the cultural richness of the world and empowering local communities through visual storytelling."
+        },
+        "sections": {
+            "philosophy": "Philosophy",
+            "manifest": "Internal Manifest",
+            "background": "Background",
+            "experience": "Experience",
+            "current_focus": "Current Focus",
+            "recent_collaborations": "Recent Collaborations"
+        }
+    },
+    "destinations": {
+        "kyoto": {
+            "title": "Kyoto, Japan",
+            "description": "The cultural capital of Japan, where ancient traditions blend seamlessly with modern life.",
+            "history": "For over 1,000 years, Kyoto served as the imperial capital of Japan. It is home to over 2,000 temples and shrines, including 17 UNESCO World Heritage Sites. Unlike Tokyo, Kyoto escaped much of the destruction of WWII, preserving its historical streets (machiya) and atmosphere.",
+            "why_visit": "Kyoto offers a serene escape into Japan's past. From the iconic Fushimi Inari Shrine to the bamboo groves of Arashiyama, it's a place to reflect and find peace. The seasonal changes, especially cherry blossoms in spring and red glazed leaves in autumn, are breathtaking."
+        },
+        "iceland": {
+            "title": "Iceland",
+            "description": "A land of fire and ice, where dramatic landscapes forge an unforgettable adventure.",
+            "history": "Settled by Vikings in the 9th century, Iceland is a geologically young land formed by volcanic eruptions. Its history is a saga of survival against harsh elements, distinct cultural heritage, and a deep connection to nature/folklore.",
+            "why_visit": "Iceland is a photographer's paradise. Witness the Northern Lights (Aurora Borealis), massive waterfalls like Skógafoss, black sand beaches at Reynisfjara, and blue glaciers. It's raw, wild, and incredibly beautiful."
+        }
+    }
+}

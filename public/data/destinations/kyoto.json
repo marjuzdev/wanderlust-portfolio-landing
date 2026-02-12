@@ -1,0 +1,75 @@
+{
+    "id": "kyoto",
+    "title": "destinations.kyoto.title",
+    "slug": "kyoto",
+    "description": "destinations.kyoto.description",
+    "history": "destinations.kyoto.history",
+    "whyVisit": "destinations.kyoto.why_visit",
+    "featured": true,
+    "images": [
+        {
+            "id": "k1",
+            "src": "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&q=80",
+            "alt": "Fushimi Inari Shrine",
+            "aspectRatio": 0.67,
+            "caption": {
+                "subject": "Torii Gates",
+                "profession": "Cultural Landmark"
+            },
+            "metadata": {
+                "title": "Path of a Thousand Gates",
+                "year": "2023",
+                "location": "Fushimi Inari",
+                "series": "kyoto"
+            }
+        },
+        {
+            "id": "k2",
+            "src": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
+            "alt": "Traditional Street in Gion",
+            "aspectRatio": 1.5,
+            "caption": {
+                "subject": "Gion District",
+                "profession": "Historic District"
+            },
+            "metadata": {
+                "title": "Evening in Gion",
+                "year": "2023",
+                "location": "Gion",
+                "series": "kyoto"
+            }
+        },
+        {
+            "id": "k3",
+            "src": "https://images.unsplash.com/photo-1578271887552-5ac3a72752bc?w=800&q=80",
+            "alt": "Arashiyama Bamboo Grove",
+            "aspectRatio": 0.67,
+            "caption": {
+                "subject": "Bamboo Grove",
+                "profession": "Nature"
+            },
+            "metadata": {
+                "title": "Whispering Bamboo",
+                "year": "2023",
+                "location": "Arashiyama",
+                "series": "kyoto"
+            }
+        },
+        {
+            "id": "k4",
+            "src": "https://images.unsplash.com/photo-1624253321171-1be53e12f5f4?w=800&q=80",
+            "alt": "Kinkaku-ji Golden Pavilion",
+            "aspectRatio": 1.5,
+            "caption": {
+                "subject": "Kinkaku-ji",
+                "profession": "Temple"
+            },
+            "metadata": {
+                "title": "Golden Reflection",
+                "year": "2023",
+                "location": "Kita Ward",
+                "series": "kyoto"
+            }
+        }
+    ]
+}

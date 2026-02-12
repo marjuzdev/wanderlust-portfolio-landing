@@ -1,0 +1,73 @@
+{
+    "navigation": {
+        "home": "Inicio",
+        "collection": "Colección",
+        "information": "Información",
+        "all_photos": "Todas las Fotos",
+        "about": "Acerca de"
+    },
+    "home": {
+        "featured_destination": "Destino Destacado",
+        "explore_destination": "Explorar Destino",
+        "curated_selection": "Selección Curada",
+        "discover_world": "Descubre \nEl Mundo",
+        "full_collection": "Colección Completa",
+        "preparing": "Preparando la próxima aventura..."
+    },
+    "destination": {
+        "destination_label": "Destino",
+        "history": "Historia",
+        "why_visit": "Por Qué Visitar"
+    },
+    "gallery": {
+        "archive": "Archivo",
+        "world_gallery": "Galería Mundial",
+        "all_destinations": "Todos los Destinos"
+    },
+    "footer": {
+        "rights_reserved": "Todos los Derechos Reservados.",
+        "created_by": "Creado por",
+        "philosophy": "Filosofía"
+    },
+    "photographer": {
+        "name": "Wanderlust Chronicles",
+        "tagline": "Descubriendo el Alma del Mundo",
+        "bio": "Un viaje visual que comenzó en los paisajes vibrantes de Colombia y se expandió al mundo. Capturamos la esencia de destinos que inspiran, conectando culturas a través de la lente.",
+        "biography": {
+            "philosophy": "Viajar no es solo ver nuevos lugares, es sentirlos. Creemos en la exploración inmersiva que va más allá de las guías turísticas para encontrar el corazón palpitante de cada cultura.",
+            "background": "Lo que comenzó en 2018 como un proyecto para documentar la biodiversidad y tradiciones de Colombia, se ha transformado en una plataforma global de narración visual.",
+            "experience": "Desde la Amazonía hasta los Alpes, nuestro equipo ha recorrido más de 50 países, llevando siempre consigo la pasión por descubrir historias auténticas y conectar con comunidades locales.",
+            "currentFocus": "Actualmente expandiendo nuestros horizontes hacia Asia y los países nórdicos, sin olvidar nuestras raíces y el compromiso con las historias no contadas."
+        },
+        "clients": {
+            "travel_partners": "Socios de Viaje",
+            "publications": "Publicaciones"
+        },
+        "contact": {
+            "direct_channel": "Canal Directo",
+            "available_message": "Enfocados en documentar la riqueza cultural del mundo y empoderar a las comunidades locales a través de la narrativa visual."
+        },
+        "sections": {
+            "philosophy": "Filosofía",
+            "manifest": "Manifiesto Interno",
+            "background": "Antecedentes",
+            "experience": "Experiencia",
+            "current_focus": "Enfoque Actual",
+            "recent_collaborations": "Colaboraciones Recientes"
+        }
+    },
+    "destinations": {
+        "kyoto": {
+            "title": "Kioto, Japón",
+            "description": "La capital cultural de Japón, donde las tradiciones antiguas se mezclan perfectamente con la vida moderna.",
+            "history": "Durante más de 1.000 años, Kioto sirvió como la capital imperial de Japón. Alberga más de 2.000 templos y santuarios, incluidos 17 sitios del Patrimonio Mundial de la UNESCO. A diferencia de Tokio, Kioto escapó de gran parte de la destrucción de la Segunda Guerra Mundial, conservando sus calles históricas (machiya) y su atmósfera.",
+            "why_visit": "Kioto ofrece un escape sereno al pasado de Japón. Desde el icónico Santuario Fushimi Inari hasta los bosques de bambú de Arashiyama, es un lugar para reflexionar y encontrar la paz. Los cambios estacionales, especialmente los cerezos en flor en primavera y las hojas rojas en otoño, son impresionantes."
+        },
+        "iceland": {
+            "title": "Islandia",
+            "description": "Una tierra de fuego y hielo, donde paisajes dramáticos forjan una aventura inolvidable.",
+            "history": "Poblada por vikingos en el siglo IX, Islandia es una tierra geológicamente joven formada por erupciones volcánicas. Su historia es una saga de supervivencia contra elementos duros, patrimonio cultural distinto y una profunda conexión con la naturaleza y el folclore.",
+            "why_visit": "Islandia es un paraíso para los fotógrafos. Sea testigo de la aurora boreal, cascadas masivas como Skógafoss, playas de arena negra en Reynisfjara y glaciares azules. Es crudo, salvaje e increíblemente hermoso."
+        }
+    }
+}

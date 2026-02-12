@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Sophisticated Art Gallery Palette - Cream & Charcoal */
+    --background: 40 30% 98%;
+    --foreground: 220 15% 15%;
+
+    --card: 40 30% 98%;
+    --card-foreground: 220 15% 15%;
+
+    --popover: 40 30% 98%;
+    --popover-foreground: 220 15% 15%;
+
+    --primary: 220 15% 15%;
+    --primary-foreground: 40 30% 98%;
+
+    --secondary: 40 20% 94%;
+    --secondary-foreground: 220 15% 15%;
+
+    --muted: 40 20% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 30 40% 40%;
+    --accent-foreground: 40 30% 98%;
+
+    --border: 40 15% 90%;
+    --input: 40 15% 90%;
+    --ring: 220 15% 15%;
+
+    --radius: 0rem; /* Modern galleries often use sharp edges */
+
+    /* Typography */
+    --font-serif: 'Hind', sans-serif;
+    --font-sans: 'Poppins', system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 40 30% 95%;
+
+    --card: 220 15% 10%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 40 30% 95%;
+    --primary-foreground: 220 15% 10%;
+
+    --secondary: 220 12% 16%;
+    --secondary-foreground: 40 30% 95%;
+
+    --muted: 220 12% 16%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 30 40% 50%;
+    --accent-foreground: 40 30% 95%;
+
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 40 30% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-serif);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

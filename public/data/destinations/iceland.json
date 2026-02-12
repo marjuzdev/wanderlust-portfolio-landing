@@ -1,0 +1,75 @@
+{
+    "id": "iceland",
+    "title": "destinations.iceland.title",
+    "slug": "iceland",
+    "description": "destinations.iceland.description",
+    "history": "destinations.iceland.history",
+    "whyVisit": "destinations.iceland.why_visit",
+    "featured": true,
+    "images": [
+        {
+            "id": "i1",
+            "src": "https://images.unsplash.com/photo-1476610182048-b716b8518aae?w=800&q=80",
+            "alt": "Skógafoss Waterfall",
+            "aspectRatio": 1.5,
+            "caption": {
+                "subject": "Skógafoss",
+                "profession": "Waterfall"
+            },
+            "metadata": {
+                "title": "Power of Nature",
+                "year": "2022",
+                "location": "South Iceland",
+                "series": "iceland"
+            }
+        },
+        {
+            "id": "i2",
+            "src": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80",
+            "alt": "Northern Lights",
+            "aspectRatio": 1.5,
+            "caption": {
+                "subject": "Aurora Borealis",
+                "profession": "Phenomenon"
+            },
+            "metadata": {
+                "title": "Dancing Lights",
+                "year": "2022",
+                "location": "Kirkjufell",
+                "series": "iceland"
+            }
+        },
+        {
+            "id": "i3",
+            "src": "https://images.pexels.com/photos/20458454/pexels-photo-20458454.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+            "alt": "Black Sand Beach",
+            "aspectRatio": 0.67,
+            "caption": {
+                "subject": "Reynisfjara",
+                "profession": "Coastline"
+            },
+            "metadata": {
+                "title": "Basalt Columns",
+                "year": "2022",
+                "location": "Vík",
+                "series": "iceland"
+            }
+        },
+        {
+            "id": "i4",
+            "src": "https://images.unsplash.com/photo-1494791368093-85217fbbf8de?w=800&q=80",
+            "alt": "Icelandic Horse",
+            "aspectRatio": 1.5,
+            "caption": {
+                "subject": "Icelandic Horse",
+                "profession": "Wildlife"
+            },
+            "metadata": {
+                "title": "Windblown Mane",
+                "year": "2022",
+                "location": "Ring Road",
+                "series": "iceland"
+            }
+        }
+    ]
+}
