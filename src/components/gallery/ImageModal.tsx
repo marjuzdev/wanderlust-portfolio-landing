@@ -45,58 +45,74 @@ export function ImageModal({ image, isOpen, onClose, onPrevious, onNext }: Image
           onClick={onClose}
           onDoubleClick={onClose}
         >
-          {/* Close Button - Minimalist */}
+          {/* Close Button - Positioned to avoid overlap */}
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 z-[110] p-2 text-white/60 hover:text-white transition-colors duration-300 group"
+            className="absolute top-4 right-4 sm:top-8 sm:right-8 z-[120] p-2 text-white/60 hover:text-white transition-colors duration-300 group"
             aria-label="Cerrar"
           >
             <X className="w-6 h-6 sm:w-8 sm:h-8 group-hover:scale-110 transition-transform" />
           </button>
-
-          {/* Navigation Controls - Minimalist */}
-          {onPrevious && (
-            <button
-              onClick={(e) => { e.stopPropagation(); onPrevious(); }}
-              className="absolute left-4 sm:left-12 z-[110] p-4 text-white/40 hover:text-white transition-colors duration-300 hidden sm:flex items-center justify-center group"
-              aria-label="Anterior"
-            >
-              <ChevronLeft className="w-10 h-10 group-hover:-translate-x-1 transition-transform" />
-            </button>
-          )}
-
-          {onNext && (
-            <button
-              onClick={(e) => { e.stopPropagation(); onNext(); }}
-              className="absolute right-4 sm:right-12 z-[110] p-4 text-white/40 hover:text-white transition-colors duration-300 hidden sm:flex items-center justify-center group"
-              aria-label="Siguiente"
-            >
-              <ChevronRight className="w-10 h-10 group-hover:translate-x-1 transition-transform" />
-            </button>
-          )}
-
-          {/* Mobile Navigation Areas */}
-          <div className="absolute inset-y-0 left-0 w-[20%] z-[105] sm:hidden" onClick={(e) => { e.stopPropagation(); if (onPrevious) onPrevious(); }} />
-          <div className="absolute inset-y-0 right-0 w-[20%] z-[105] sm:hidden" onClick={(e) => { e.stopPropagation(); if (onNext) onNext(); }} />
 
           <motion.div
             initial={{ scale: 0.99, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.99, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-            className="relative w-full h-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center p-8 lg:p-12 gap-12 lg:gap-20"
+            className="relative w-full h-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center p-6 sm:p-12 lg:p-16 gap-6 sm:gap-10 lg:gap-20"
             onClick={(e) => e.stopPropagation()}
-            onDoubleClick={(e) => e.stopPropagation()}
           >
-            <div className="relative max-h-[65vh] lg:max-h-[75vh] w-full lg:w-3/5 flex items-center justify-center">
+            {/* Image Container */}
+            <div className="relative max-h-[50vh] sm:max-h-[60vh] lg:max-h-[75vh] w-full lg:w-3/5 flex items-center justify-center">
               <img
                 src={image.src}
                 alt={image.alt}
-                className="max-w-full max-h-[60vh] lg:max-h-[75vh] object-contain shadow-2xl grayscale-[0.1] hover:grayscale-0 transition-all duration-700"
+                className="max-w-full max-h-full object-contain shadow-2xl grayscale-[0.1] hover:grayscale-0 transition-all duration-700"
                 draggable={false}
               />
+
+              {/* Desktop Navigation - Large and non-overlapping */}
+              {onPrevious && (
+                <button
+                  onClick={(e) => { e.stopPropagation(); onPrevious(); }}
+                  className="absolute -left-12 lg:-left-24 z-[110] p-4 text-white/40 hover:text-white transition-colors duration-300 hidden lg:flex items-center justify-center group"
+                  aria-label="Anterior"
+                >
+                  <ChevronLeft className="w-12 h-12 group-hover:-translate-x-1 transition-transform" />
+                </button>
+              )}
+
+              {onNext && (
+                <button
+                  onClick={(e) => { e.stopPropagation(); onNext(); }}
+                  className="absolute -right-12 lg:-right-24 z-[110] p-4 text-white/40 hover:text-white transition-colors duration-300 hidden lg:flex items-center justify-center group"
+                  aria-label="Siguiente"
+                >
+                  <ChevronRight className="w-12 h-12 group-hover:translate-x-1 transition-transform" />
+                </button>
+              )}
             </div>
 
+            {/* Mobile Navigation Controls - Ordered Row */}
+            <div className="flex lg:hidden items-center justify-center gap-12 w-full py-2">
+              <button
+                onClick={(e) => { e.stopPropagation(); if (onPrevious) onPrevious(); }}
+                className="p-3 text-white/40 hover:text-white active:scale-90 transition-all"
+                aria-label="Anterior"
+              >
+                <ChevronLeft className="w-8 h-8" />
+              </button>
+              <span className="w-[1px] h-4 bg-white/10" />
+              <button
+                onClick={(e) => { e.stopPropagation(); if (onNext) onNext(); }}
+                className="p-3 text-white/40 hover:text-white active:scale-90 transition-all"
+                aria-label="Siguiente"
+              >
+                <ChevronRight className="w-8 h-8" />
+              </button>
+            </div>
+
+            {/* Caption Container */}
             <motion.div
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
@@ -112,7 +128,7 @@ export function ImageModal({ image, isOpen, onClose, onPrevious, onNext }: Image
                 <span>{image.metadata.year}</span>
               </div>
               {image.metadata.location && (
-                <p className="text-[10px] sm:text-[11px] text-white/70 mt-8 font-normal italic tracking-[0.4em] uppercase border-t border-white/10 pt-8 inline-block lg:block">
+                <p className="text-[10px] sm:text-[11px] text-white/70 mt-6 lg:mt-10 font-normal italic tracking-[0.4em] uppercase border-t border-white/10 pt-6 lg:pt-10 inline-block lg:block">
                   {image.metadata.location}
                 </p>
               )}
