@@ -2,7 +2,7 @@ import { GalleryImage } from "@/types/gallery";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useCallback } from "react";
-import { cn } from "@/lib/utils";
+import { createPortal } from "react-dom";
 
 interface ImageModalProps {
   image: GalleryImage | null;
@@ -33,84 +33,86 @@ export function ImageModal({ image, isOpen, onClose, onPrevious, onNext }: Image
     };
   }, [isOpen, handleKeyDown]);
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       {isOpen && image && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80"
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-md"
           onClick={onClose}
+          onDoubleClick={onClose}
         >
-          {/* Close Button - Optimized for Touch */}
+          {/* Close Button - Minimalist */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 sm:top-8 sm:right-8 z-[110] p-3 rounded-full bg-black/10 hover:bg-black/20 text-foreground transition-all duration-300 backdrop-blur-sm border border-transparent hover:border-foreground/10"
+            className="absolute top-6 right-6 z-[110] p-2 text-white/60 hover:text-white transition-colors duration-300 group"
             aria-label="Cerrar"
           >
-            <X className="w-6 h-6 sm:w-8 sm:h-8" />
+            <X className="w-6 h-6 sm:w-8 sm:h-8 group-hover:scale-110 transition-transform" />
           </button>
 
-          {/* Navigation Controls - Optimized for Touch */}
+          {/* Navigation Controls - Minimalist */}
           {onPrevious && (
             <button
               onClick={(e) => { e.stopPropagation(); onPrevious(); }}
-              className="absolute left-2 sm:left-8 z-[110] p-3 rounded-full bg-black/5 hover:bg-black/20 text-foreground transition-all duration-300 backdrop-blur-sm hidden sm:flex items-center justify-center group"
+              className="absolute left-4 sm:left-12 z-[110] p-4 text-white/40 hover:text-white transition-colors duration-300 hidden sm:flex items-center justify-center group"
               aria-label="Anterior"
             >
-              <ChevronLeft className="w-8 h-8 group-hover:-translate-x-0.5 transition-transform" />
+              <ChevronLeft className="w-10 h-10 group-hover:-translate-x-1 transition-transform" />
             </button>
           )}
 
           {onNext && (
             <button
               onClick={(e) => { e.stopPropagation(); onNext(); }}
-              className="absolute right-2 sm:right-8 z-[110] p-3 rounded-full bg-black/5 hover:bg-black/20 text-foreground transition-all duration-300 backdrop-blur-sm hidden sm:flex items-center justify-center group"
+              className="absolute right-4 sm:right-12 z-[110] p-4 text-white/40 hover:text-white transition-colors duration-300 hidden sm:flex items-center justify-center group"
               aria-label="Siguiente"
             >
-              <ChevronRight className="w-8 h-8 group-hover:translate-x-0.5 transition-transform" />
+              <ChevronRight className="w-10 h-10 group-hover:translate-x-1 transition-transform" />
             </button>
           )}
 
-          {/* Mobile Navigation Areas (Invisible tap zones) */}
-          <div className="absolute inset-y-0 left-0 w-[15%] z-[105] sm:hidden" onClick={(e) => { e.stopPropagation(); if (onPrevious) onPrevious(); }} />
-          <div className="absolute inset-y-0 right-0 w-[15%] z-[105] sm:hidden" onClick={(e) => { e.stopPropagation(); if (onNext) onNext(); }} />
+          {/* Mobile Navigation Areas */}
+          <div className="absolute inset-y-0 left-0 w-[20%] z-[105] sm:hidden" onClick={(e) => { e.stopPropagation(); if (onPrevious) onPrevious(); }} />
+          <div className="absolute inset-y-0 right-0 w-[20%] z-[105] sm:hidden" onClick={(e) => { e.stopPropagation(); if (onNext) onNext(); }} />
 
           <motion.div
-            initial={{ scale: 0.95, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.95, opacity: 0, y: 20 }}
-            transition={{ duration: 0.4, type: "spring", bounce: 0.3 }}
-            className="relative w-full h-full max-w-7xl mx-auto flex flex-col items-center justify-center p-4 sm:p-12"
+            initial={{ scale: 0.99, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.99, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+            className="relative w-full h-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center p-8 lg:p-12 gap-12 lg:gap-20"
             onClick={(e) => e.stopPropagation()}
+            onDoubleClick={(e) => e.stopPropagation()}
           >
-            <div className="relative max-h-[85vh] w-full flex items-center justify-center">
+            <div className="relative max-h-[65vh] lg:max-h-[75vh] w-full lg:w-3/5 flex items-center justify-center">
               <img
                 src={image.src}
                 alt={image.alt}
-                className="max-w-full max-h-full object-contain shadow-2xl rounded-sm"
+                className="max-w-full max-h-[60vh] lg:max-h-[75vh] object-contain shadow-2xl grayscale-[0.1] hover:grayscale-0 transition-all duration-700"
                 draggable={false}
               />
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mt-6 text-center max-w-2xl px-4"
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-center lg:text-left max-w-sm lg:flex-1"
             >
-              <h3 className="text-foreground font-serif text-xl sm:text-2xl font-light tracking-wide mb-1">
+              <h3 className="text-white font-serif text-lg sm:text-xl lg:text-2xl font-normal tracking-[0.12em] mb-4 uppercase leading-tight">
                 {image.caption.subject}
               </h3>
-              <div className="flex items-center justify-center gap-2 text-xs sm:text-sm tracking-widest text-muted-foreground uppercase">
+              <div className="flex items-center justify-center lg:justify-start gap-4 text-[11px] sm:text-xs tracking-[0.3em] text-white/80 uppercase font-medium">
                 <span>{image.caption.profession}</span>
-                <span className="w-1 h-1 rounded-full bg-muted-foreground/40" />
+                <span className="w-[1.5px] h-3 bg-white/20" />
                 <span>{image.metadata.year}</span>
               </div>
               {image.metadata.location && (
-                <p className="text-xs text-muted-foreground/60 mt-2 font-light italic">
+                <p className="text-[10px] sm:text-[11px] text-white/70 mt-8 font-normal italic tracking-[0.4em] uppercase border-t border-white/10 pt-8 inline-block lg:block">
                   {image.metadata.location}
                 </p>
               )}
@@ -120,4 +122,6 @@ export function ImageModal({ image, isOpen, onClose, onPrevious, onNext }: Image
       )}
     </AnimatePresence>
   );
+
+  return createPortal(modalContent, document.body);
 }
