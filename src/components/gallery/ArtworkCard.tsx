@@ -30,8 +30,8 @@ export const ArtworkCard = ({ artwork, onClick }: ArtworkCardProps) => {
                 />
 
                 {/* Clean Pinterest-style Overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-700 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100">
-                    <div className="translate-y-6 group-hover:translate-y-0 transition-transform duration-700 space-y-3">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/0 sm:group-hover:bg-gradient-to-t sm:from-black/80 sm:via-black/20 sm:to-transparent transition-all duration-700 flex flex-col justify-end p-8 opacity-100 sm:opacity-0 sm:group-hover:opacity-100">
+                    <div className="translate-y-0 sm:translate-y-6 sm:group-hover:translate-y-0 transition-transform duration-700 space-y-3">
                         <div className="flex justify-between items-baseline gap-4 text-white">
                             <h3 className="text-base font-sans font-light uppercase tracking-[0.2em] line-clamp-1 border-b border-white/30 pb-1">
                                 {artwork.metadata.title}

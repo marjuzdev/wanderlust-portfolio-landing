@@ -102,22 +102,25 @@ export function HeaderNavigation() {
             </Link>
 
             {/* Desktop Language Switcher */}
-            <div className="flex items-center gap-2 ml-4 border-l border-border pl-4">
+            <div className="flex items-center gap-1 ml-4 border-l border-border pl-4">
               <button
                 onClick={() => i18n.changeLanguage('es')}
                 className={cn(
-                  "text-[9px] tracking-widest transition-all duration-300 hover:text-foreground",
-                  i18n.language === 'es' ? "text-foreground font-bold border-b border-foreground" : "text-muted-foreground font-medium"
+                  "text-[9px] tracking-widest transition-all duration-300 px-2 py-1 rounded-sm",
+                  i18n.language === 'es'
+                    ? "bg-foreground text-background font-bold shadow-sm"
+                    : "text-muted-foreground hover:text-foreground hover:bg-black/5"
                 )}
               >
                 ES
               </button>
-              <span className="text-[9px] text-border/40">|</span>
               <button
                 onClick={() => i18n.changeLanguage('en')}
                 className={cn(
-                  "text-[9px] tracking-widest transition-all duration-300 hover:text-foreground",
-                  i18n.language === 'en' ? "text-foreground font-bold border-b border-foreground" : "text-muted-foreground font-medium"
+                  "text-[9px] tracking-widest transition-all duration-300 px-2 py-1 rounded-sm",
+                  i18n.language === 'en'
+                    ? "bg-foreground text-background font-bold shadow-sm"
+                    : "text-muted-foreground hover:text-foreground hover:bg-black/5"
                 )}
               >
                 EN
@@ -134,92 +137,93 @@ export function HeaderNavigation() {
                 className="p-2 -m-2 opacity-60 hover:opacity-100 transition-opacity"
                 aria-label="Open navigation menu"
               >
-                <Menu className="h-5 w-5" />
+                <Menu className="h-6 w-6 text-foreground" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full bg-background border-none flex flex-col p-8">
-              <Link to="/" className="group relative block mb-12" onClick={handleNavClick}>
-                <div className="relative inline-block p-2 border border-border/20">
-                  <h1 className="font-serif text-2xl leading-tight font-extralight tracking-tight text-foreground uppercase">
-                    {t(photographer.name)}
-                  </h1>
-                </div>
-              </Link>
-              <nav className="mt-8 flex-1">
-                <ul className="flex flex-col gap-10 text-center">
-                  <li>
-                    <Link
-                      to="/"
-                      onClick={handleNavClick}
-                      className={cn(
-                        "text-sm uppercase tracking-[0.3em] transition-colors",
-                        isActive("/") ? "text-foreground" : "text-muted-foreground"
-                      )}
-                    >
-                      {t('navigation.home')}
-                    </Link>
-                  </li>
-                  {destinations.map((destination) => (
-                    <li key={destination.id}>
-                      <Link
-                        to={`/destinations/${destination.slug}`}
-                        onClick={handleNavClick}
-                        className={cn(
-                          "text-sm uppercase tracking-[0.3em] transition-colors",
-                          isActive(`/destinations/${destination.slug}`) ? "text-foreground" : "text-muted-foreground"
-                        )}
-                      >
-                        {t(destination.title)}
-                      </Link>
-                    </li>
-                  ))}
-                  <li>
-                    <Link
-                      to="/gallery"
-                      onClick={handleNavClick}
-                      className={cn(
-                        "text-sm uppercase tracking-[0.3em] transition-colors",
-                        isActive("/gallery") ? "text-foreground" : "text-muted-foreground"
-                      )}
-                    >
-                      {t('navigation.collection')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/about"
-                      onClick={handleNavClick}
-                      className={cn(
-                        "text-sm uppercase tracking-[0.3em] transition-colors",
-                        isActive("/about") ? "text-foreground" : "text-muted-foreground"
-                      )}
-                    >
-                      {t('navigation.information')}
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
+            <SheetContent
+              side="right"
+              className="w-full sm:max-w-md border-l border-border/10 bg-background/80 backdrop-blur-xl p-0 flex flex-col items-center justify-center"
+              closeClassName="absolute right-8 top-8 opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-secondary"
+            >
+              <div className="flex flex-col items-center justify-between h-full w-full py-20 px-8">
 
-              {/* Mobile Language Switcher */}
-              <div className="flex justify-center items-center gap-6 pb-12">
-                <button
-                  onClick={() => { i18n.changeLanguage('es'); handleNavClick(); }}
-                  className={cn(
-                    "text-sm tracking-widest transition-all duration-300",
-                    i18n.language === 'es' ? "text-foreground font-bold border-b border-foreground" : "text-muted-foreground font-medium"
-                  )}
-                >
-                  ES
-                </button>
-                <button
-                  onClick={() => { i18n.changeLanguage('en'); handleNavClick(); }}
-                  className={cn(
-                    "text-sm tracking-widest transition-all duration-300",
-                    i18n.language === 'en' ? "text-foreground font-bold border-b border-foreground" : "text-muted-foreground font-medium"
-                  )}
-                >
-                  EN
-                </button>
+                {/* Header/Logo in Menu */}
+                <div className="text-center">
+                  <h2 className="font-serif text-3xl text-foreground tracking-widest uppercase mb-2">
+                    {t(photographer.name)}
+                  </h2>
+                  <div className="w-12 h-[1px] bg-foreground/30 mx-auto" />
+                </div>
+
+                {/* Navigation Links */}
+                <nav className="flex flex-col items-center gap-8 w-full">
+                  <Link
+                    to="/"
+                    onClick={handleNavClick}
+                    className={cn(
+                      "text-2xl font-light uppercase tracking-[0.2em] transition-all duration-500 hover:scale-110",
+                      isActive("/") ? "text-foreground font-normal" : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {t('navigation.home')}
+                  </Link>
+                  {destinations.map((destination) => (
+                    <Link
+                      key={destination.id}
+                      to={`/destinations/${destination.slug}`}
+                      onClick={handleNavClick}
+                      className={cn(
+                        "text-2xl font-light uppercase tracking-[0.2em] transition-all duration-500 hover:scale-110",
+                        isActive(`/destinations/${destination.slug}`) ? "text-foreground font-normal" : "text-muted-foreground hover:text-foreground"
+                      )}
+                    >
+                      {t(destination.title)}
+                    </Link>
+                  ))}
+                  <Link
+                    to="/gallery"
+                    onClick={handleNavClick}
+                    className={cn(
+                      "text-2xl font-light uppercase tracking-[0.2em] transition-all duration-500 hover:scale-110",
+                      isActive("/gallery") ? "text-foreground font-normal" : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {t('navigation.collection')}
+                  </Link>
+                  <Link
+                    to="/about"
+                    onClick={handleNavClick}
+                    className={cn(
+                      "text-2xl font-light uppercase tracking-[0.2em] transition-all duration-500 hover:scale-110",
+                      isActive("/about") ? "text-foreground font-normal" : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {t('navigation.information')}
+                  </Link>
+                </nav>
+
+                {/* Language Switcher */}
+                <div className="flex items-center gap-6">
+                  <button
+                    onClick={() => { i18n.changeLanguage('es'); handleNavClick(); }}
+                    className={cn(
+                      "text-xs tracking-[0.2em] transition-all duration-300 py-1 border-b border-transparent hover:border-foreground/50",
+                      i18n.language === 'es' ? "text-foreground font-bold border-foreground" : "text-muted-foreground"
+                    )}
+                  >
+                    ESPAÑOL
+                  </button>
+                  <span className="text-muted-foreground/30 text-[10px]">•</span>
+                  <button
+                    onClick={() => { i18n.changeLanguage('en'); handleNavClick(); }}
+                    className={cn(
+                      "text-xs tracking-[0.2em] transition-all duration-300 py-1 border-b border-transparent hover:border-foreground/50",
+                      i18n.language === 'en' ? "text-foreground font-bold border-foreground" : "text-muted-foreground"
+                    )}
+                  >
+                    ENGLISH
+                  </button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
